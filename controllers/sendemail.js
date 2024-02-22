@@ -1,6 +1,9 @@
 import nodemailer from 'nodemailer';
 import { vertifiedCodeModal } from '../models/vertifiedCode.js';
 import { usersModel } from '../models/users.js';
+import dotenv from 'dotenv';
+dotenv.config();
+const pass = process.env.pass;
 
 export const sendemail = async (req, res) => {
     const { mainId } = req.body;
@@ -60,7 +63,7 @@ const sendEmailService = async (mainId) => {
         secure: true,
         auth: {
             user: "duhungminh222@gmail.com",
-            pass: "fpjx kxve stnm gwcw",
+            pass: pass,
         },
     });
 

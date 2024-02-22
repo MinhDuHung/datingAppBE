@@ -1,8 +1,11 @@
 import { vertifiedCodeModal } from '../models/vertifiedCode.js';
 import { usersModel } from '../models/users.js';
 import twilio from 'twilio';
-const accountSid = 'AC8b17c934ed53716353d0a520f89eb530';
-const authToken = 'b5eaa2aa27c4e81216bfa4c5c2bd92cc';
+import dotenv from 'dotenv';
+dotenv.config();
+const accountSid = process.env.accountSid;
+const authToken = process.env.authToken;
+
 const client = twilio(accountSid, authToken);
 
 export const sendphone = async (req, res) => {
